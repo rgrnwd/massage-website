@@ -39,6 +39,7 @@ const Services: React.FC = () => {
             <div className="text-content">
                 I offer pregnancy massage from twelve weeks to full-term. 
             </div>
+            <div className="services-footer"></div>
         </div>
     )
 }
