@@ -13,8 +13,8 @@ const NotFoundPage: React.FC = () => {
     }
 
     return (
-        <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-            <h1 style={{ fontSize: '4em' }}>Oops 404!</h1>
+        <div className='page'>
+            <h1 className="page-header">Oops 404!</h1>
             <span style={{ cursor: 'pointer' }} onClick={() => redirectToHomePage()}>
                 Homepage
             </span>

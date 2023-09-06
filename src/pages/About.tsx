@@ -2,8 +2,8 @@ import React from 'react'
 
 const About: React.FC = () => {
     return (
-        <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-            <h1 style={{ fontSize: '4em' }}>About Me</h1>
+        <div className="page">
+            <h1 className="page-header">About Me</h1>
             <div className="text-content">
                 I am a Remedial Massage therapist with a passion for helping people live and function at their best. 
                 I earned my Diploma of Remedial Massage from Victoria University in 2020. 
@@ -19,7 +19,7 @@ const About: React.FC = () => {
             </div>
             <div className="text-content">
                 On returning home to Melbourne, I wasted no time in becoming a qualified Remedial Massage therapist. 
-                A keen problem solver, I believe in finding and addressing the root cause of a condition, 
+                A keen problem solver, I believe in finding and addressing the underlying cause of a condition, 
                 rather than just treating the symptoms. My treatments can include a mix of Remedial and traditional Thai techniques, 
                 myofascial cupping, dry needling or mobility work, as well as posture and movement assessment & corrections 
                 which are derived largely from more than a decade of Tai Chi practice. 

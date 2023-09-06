@@ -2,8 +2,11 @@ import React from 'react'
 
 const HomePage: React.FC = () => {
     return (
-        <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-            <h1 style={{ fontSize: '4em' }}>Duncan Greenwood Massage</h1>
+        <div className="page">
+            <h1 className="page-header">Duncan Greenwood Massage</h1>
+            <div className="services-header">
+                Home based remedial massage clinic in Brunswick
+            </div>
         </div>
     )
 }
