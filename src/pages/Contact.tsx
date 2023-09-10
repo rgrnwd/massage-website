@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
             please contact me using the form below.
         </div>
         <div className="text-content">
-            You can also contact me directly via email <b>duncan@dgmassage.com.au</b> or phone <b>0433 974 738</b>
+            You can also contact me directly via email <a href="mailto:duncan@dgmassage.com.au"><b>duncan@dgmassage.com.au</b></a> or phone <b>0433 974 738</b>
         </div>
         <ContactForm/>
     </div>

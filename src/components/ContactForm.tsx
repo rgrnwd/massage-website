@@ -7,17 +7,20 @@ const ContactForm = () => {
     const [formStatus, setFormStatus] = React.useState('Send')
     //@ts-ignore
     const onSubmit = (e) => {
-      e.preventDefault()
+        console.log('target :' + e.target + ', current target:' + e.currentTarget)
+        e.preventDefault()
       setFormStatus('Submitting...')
       
       emailjs.sendForm('service_m3731x7', 'template_ziqexc5', e.currentTarget, '94dRR_IcmDKnTnDtg')
      .then((result: any) => {
          // show the user a success message
-        console.log(result)
+         console.log(e.currentTarget)
+         console.log(result)
         setFormStatus('Sent')
      }, (error: any) => {
          // show the user an error
-         console.log(error)
+      console.log('target :' + e.target + ', current target:' + e.currentTarget)
+      console.log(error)
         setFormStatus('Failed')
      });
     }
