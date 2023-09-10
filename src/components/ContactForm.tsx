@@ -1,4 +1,6 @@
 import React from 'react'
+import emailjs from '@emailjs/browser'
+
 import '../styles/contact.sass';
 
 const ContactForm = () => {
@@ -7,13 +9,17 @@ const ContactForm = () => {
     const onSubmit = (e) => {
       e.preventDefault()
       setFormStatus('Submitting...')
-      const { name, email, message } = e.target.elements
-      const conFom = {
-        name: name.value,
-        email: email.value,
-        message: message.value,
-      }
-      console.log(conFom)
+      
+      emailjs.sendForm('service_m3731x7', 'template_ziqexc5', e.currentTarget, '94dRR_IcmDKnTnDtg')
+     .then((result: any) => {
+         // show the user a success message
+        console.log(result)
+        setFormStatus('Sent')
+     }, (error: any) => {
+         // show the user an error
+         console.log(error)
+        setFormStatus('Failed')
+     });
     }
     return (
       <div className="form">
