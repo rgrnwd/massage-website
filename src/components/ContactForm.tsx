@@ -7,38 +7,34 @@ const ContactForm = () => {
     const [formStatus, setFormStatus] = React.useState('Send')
     //@ts-ignore
     const onSubmit = (e) => {
-        console.log('target :' + e.target + ', current target:' + e.currentTarget)
         e.preventDefault()
-      setFormStatus('Submitting...')
+        console.log(e.currentTarget)
+        setFormStatus('Submitting...')
       
-      emailjs.sendForm('service_m3731x7', 'template_ziqexc5', e.currentTarget, '94dRR_IcmDKnTnDtg')
-     .then((result: any) => {
-         // show the user a success message
-         console.log(e.currentTarget)
-         console.log(result)
-        setFormStatus('Sent')
-     }, (error: any) => {
-         // show the user an error
-      console.log('target :' + e.target + ', current target:' + e.currentTarget)
-      console.log(error)
-        setFormStatus('Failed')
-     });
+        emailjs.sendForm('service_m3731x7', 'template_ziqexc5', e.currentTarget, '94dRR_IcmDKnTnDtg')
+            .then((result: any) => {
+                console.log(result)
+                setFormStatus('Sent')
+            }, (error: any) => {
+                console.log(error)
+                setFormStatus('Failed to Send! Please email/sms directly')
+            });
     }
     return (
       <div className="form">
         <h2 className="container">Submit an Inquiry</h2>
         <form onSubmit={onSubmit}>
           <div className="container">
-            <label className="contact-label" htmlFor="name">
+            <label className="contact-label" htmlFor="from_name">
               Name
             </label>
-            <input className="contact-box" type="text" id="name" required />
+            <input className="contact-box" type="text" id="from_name" required />
           </div>
           <div className="container">
-            <label className="contact-label" htmlFor="email">
+            <label className="contact-label" htmlFor="reply_to">
               Email
             </label>
-            <input className="contact-box" type="email" id="email" required />
+            <input className="contact-box" type="email" id="reply_to" required />
           </div>
           <div className="container">
             <label className="contact-label" htmlFor="message">
