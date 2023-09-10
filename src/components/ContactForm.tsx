@@ -8,7 +8,6 @@ const ContactForm = () => {
     //@ts-ignore
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(e.currentTarget)
         setFormStatus('Submitting...')
       
         emailjs.sendForm('service_m3731x7', 'template_ziqexc5', e.currentTarget, '94dRR_IcmDKnTnDtg')
