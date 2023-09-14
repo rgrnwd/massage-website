@@ -1,11 +1,13 @@
+@import './_variables'
+
 .form
   padding-top: 3%
   padding: 2%
   padding-bottom: 4%
-  background: #2222
+  background: $silver
   margin-top: 5%
   width: 60%
-  min-width: 400px
+  min-width: 300px
 
 .container
   margin-top: 0
@@ -16,29 +18,70 @@
   width: 100%
 
 .contact-label
-  background: #2222
+  background: $gray
   border-color: black
-  border-width: medium
-  padding: 1em 0.5em 0.5em
   font-size: 1.15em
+  font-weight: 600
+  padding: 1em 0.5em 0.5em
   width: 22%
 
 textarea
   height: 250px
   resize: none
+  border-color: black
 
 .contact-box
-  background: #2222
+  background: $gray
+  border-width: thin
   padding: 0.5em 1em 0.5em
   font-size: 1.15em
   width: 70%
-  min-width: 250px
+  min-width: 200px
 
 .btn-danger
-  background: #3333
+  background: $gray
   color: black
   margin-top: 5%
   width: 100%
   height: 40px
   font-size: large
+  font-weight: 600
   margin-top: 2.5em
+
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: 3px solid darken($navy, 10%)
+    transition: opacity 0.3s, border 0.3s
+
+  &:hover::before
+    opacity: 0
+  
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: transparent
+    border: 3px solid $offwhite
+    opacity: 0
+    z-index: -1
+    transform: scaleX(1.1) scaleY(1.3)
+    transition: transform 0.3s, opacity 0.3s
+  
+  &:hover::after
+    opacity: 1
+    transform: scaleX(1) scaleY(1)
+
+//   &:hover
+//     background: $silver
+//     font-weight: bold
+//     color: $navy
+//     transform: translateY(3px)
+//     border-radius: 3px
