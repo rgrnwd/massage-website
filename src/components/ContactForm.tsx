@@ -10,7 +10,14 @@ const ContactForm = () => {
         e.preventDefault()
         setFormStatus('Submitting...')
       
-        emailjs.sendForm('service_m3731x7', 'template_ziqexc5', e.currentTarget, '94dRR_IcmDKnTnDtg')
+        const { from_name, reply_to, message } = e.currentTarget.elements
+        const templateParams = {
+          from_name: from_name.value,
+          reply_to: reply_to.value,
+          message: message.value,
+        }
+
+        emailjs.send('service_m3731x7', 'template_ziqexc5', templateParams, '94dRR_IcmDKnTnDtg')
             .then((result: any) => {
                 console.log(result)
                 setFormStatus('Sent')
@@ -21,7 +28,7 @@ const ContactForm = () => {
     }
     return (
       <div className="form">
-        <h2 className="container">Submit an Inquiry</h2>
+        <h2 className="container">Submit an Enquiry</h2>
         <form onSubmit={onSubmit}>
           <div className="container">
             <label className="contact-label" htmlFor="from_name">
